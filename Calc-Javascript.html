@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>1. Sayı</th>
+        <th>İşlem</th>
+        <th>2. Sayı</th>
+        <th>Sonuç</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="deger1"></td>
+        <td><label id="islem">&nbsp;&nbsp;</label></td>
+        <td><input type="text" id="deger2"></td>
+        <td><label id="sonuc"></label></td>
+    </tr>
+</table><br/>
+<table>
+    <tr>
+        <td><button id="arti">+</button></td>
+        <td><button id="eksi">-</button></td>
+        <td><button id="carpi">x</button></td>
+        <td><button id="bolu">%</button></td>
+        <td><button id="esit">=</button></td>
+    </tr>
+</table>
+<script>
+    var deger;
+    document.getElementById("arti").onclick = function()
+    {
+        document.getElementById("islem").innerHTML = "+";
+        deger = "+";
+    };
+    document.getElementById("eksi").onclick = function()
+    {
+        document.getElementById("islem").innerHTML = "-";
+        deger = "-";
+    };
+    document.getElementById("carpi").onclick = function()
+    {
+        document.getElementById("islem").innerHTML = "x";
+        deger = "x";
+    };
+    document.getElementById("bolu").onclick = function()
+    {
+        document.getElementById("islem").innerHTML = "%";
+        deger = "%";
+    };
+    document.getElementById("esit").onclick = function()
+    {
+        if (deger == "+"){
+            document.getElementById("sonuc").innerHTML = parseInt(document.getElementById("deger1").value) + parseInt(document.getElementById("deger2").value);
+        }
+        else if (deger == "-"){
+            document.getElementById("sonuc").innerHTML = parseInt(document.getElementById("deger1").value) - parseInt(document.getElementById("deger2").value);
+        }
+        else if (deger == "x"){
+            document.getElementById("sonuc").innerHTML = parseInt(document.getElementById("deger1").value) * parseInt(document.getElementById("deger2").value);
+        }
+        else if (deger == "%"){
+            document.getElementById("sonuc").innerHTML = parseInt(document.getElementById("deger1").value) / parseInt(document.getElementById("deger2").value);
+        }
+    };
+</script>
+</body>
+</html>
